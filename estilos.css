@@ -1,0 +1,885 @@
+/*GLOBAL*/
+
+html{
+   scroll-behavior: smooth;
+}
+
+header{
+    border-radius: 10px 10px 0 0;
+}
+ul{
+    margin-bottom: 0;
+}
+header, footer, main{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.418);
+}
+img{
+    display: block;
+}
+ul{
+    list-style-type: none;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: black;
+    margin: 0 0 50px;
+    text-align: center;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: black;
+    margin: 0;
+}
+a{
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+hr{
+    border: 1px solid grey;
+    display: inline-block;
+    margin-top: 0;
+}
+
+/*****HEADER*****/
+
+header {
+     height:50px;
+     background-color: rgb(255, 255, 255);
+     
+
+}
+#estudio_logo {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    margin: 20px 0 0 50px;
+    padding-bottom: 5px;
+    z-index: 10;
+}
+#estudio_logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 200px;
+}
+#estudio_logo a svg{
+    height: 100px;
+    width: 160px;
+    transition: transform 100ms linear;
+}
+#estudio_logo a svg:hover{
+    transform: scale(1.05, 1.05);
+}
+/*Animacion LOGO SVG*/
+#estudio_logo a svg path{
+    stroke-dasharray: 1000;
+    animation: dibujoLogo 10s ease-in-out infinite;
+}
+
+@keyframes dibujoLogo{
+    0%{
+        stroke-dashoffset: 1000;
+    }
+    50%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 1000;
+    }
+}
+
+/****** NAV MENU *******/
+
+#botonera_menu {
+    margin: 0;
+    height: 50px;
+}
+#lista_botonera{
+    margin: 0;
+    padding: 0 8%;
+    height: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista_botonera li a {
+    padding: 0 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em ;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.5s;
+    flex: 1 1 auto;
+}
+
+#lista_botonera li a:hover {
+    color: grey;  
+}
+button{
+    outline: 0;
+}
+/***** MUSIC BUTTON *****/
+
+.cont_botonmusica{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.botonmusica{
+    width: 70px;
+    height: 70px;
+    background-image: url(imagenes/iconos/msc-icon.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+    background-size: 50px;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 2px solid grey;
+    filter: sepia(100);
+    transition: all 100ms;
+}
+.botonmusica.off{
+    filter: sepia(0);
+}
+
+/******* MAIN *******/
+
+#img_index {
+    margin-top: 0;
+    background: url(imagenes/estudio-index2.png) no-repeat;
+    width: 960px;
+    transform-origin: top;
+    animation: rollImagen 1s ease-in forwards;
+    -webkit-animation: rollImagen 1s ease-in forwards;
+
+}
+
+@keyframes rollImagen {
+    from {
+       height: 50px
+    }
+
+    to {
+        height: 600px
+    }
+}
+
+#txt_presenta {
+    position: relative;
+    top: 90%;
+    color: white;
+    opacity: 0;
+    animation: fadeTxtImagen 2s ease-in 1s forwards;
+}
+
+@keyframes fadeTxtImagen {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#txt_presenta h2{
+    font-size: 1em;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sep{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.texto_separador{
+    margin: 10px 45px;
+    display: inline-block;
+    font-size: 1.5em;
+}
+#cont_servicios-pri{
+    padding: 50px 0 50px 0;
+    background: rgba(163, 163, 163, 0.322);
+}
+
+
+.b{
+    height: 200px;
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 35px;
+    background-size: cover;
+    filter: sepia(0%) saturate(20%);
+    transition: filter 0.1s;
+}
+.b:hover{
+    filter: sepia(80%); 
+}
+#b{
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 30px;
+    justify-content: center;
+}
+.b.compo{
+    background-image: url(imagenes/compo-img.jpg);
+
+}
+.b.prod{
+    background-image: url(imagenes/produ-img.png);
+
+
+}
+.b.mix{
+    background-image: url(imagenes/mezcla-img.jpg);
+}
+.b.mstr{
+
+    background-image: url(imagenes/master-img.jpg);
+}
+.textob{
+    text-align: center;
+    margin: 0;
+    line-height: 200px;
+}
+#contenido{
+      background-color: rgba(255, 255, 255, 0.541);
+      padding-bottom: 100px;
+}
+#txt_servicios{
+    padding-top: 100px;
+    width: 900px;
+    margin: 0 auto 0 auto;
+}
+#lista_servicios li{
+    margin-bottom: 80px;
+}
+#lista_servicios {
+    padding: 0;
+}
+#txt_compo, #txt_mix{
+    text-align: left;
+}
+#txt_produ, #txt_mstr{
+    text-align: right;
+}
+footer {
+    font-size: 0.8em;
+    clear: both;
+    height: 200px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    border-top: 2px solid grey;
+}
+#cont_redes{
+    float: right;
+    margin: 50px 100px 20px 0;
+}
+#iconos_redes li{
+    display: inline-block;
+    margin-left: 30px ;
+}
+
+/****** CONTACTO *****/
+
+#contacto_todo{
+    margin-top: 50px;
+}
+#info_contacto{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 70px;
+    float: left;
+}
+#logo_footer{
+    margin-top: 40px;
+    margin-left: 180px;
+   float: left;
+}
+form label{
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+}
+#contacto_form{
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 auto 0 auto;
+    width: 460px;
+}
+.grupo_form{
+    margin-top: 30px;
+}
+#intro_form{
+    margin-bottom: 80px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-right: 0px;
+}
+.boton_enviar{
+    padding-left: auto;
+    padding-right: auto;
+    width: 80px;
+    height: 30px;
+    margin-top: 30px;
+}
+.form_box{
+    width: 400px;
+    height: 25px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+#img_contacto{
+    background-image: url(imagenes/contacto-banner1.png);
+    width:960px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*TODO SECTION*/
+.app-todo{
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper-todo{
+    background: white;
+    border: 2px solid grey;
+    border-radius: 40px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.wrapper-todo h2{
+    margin-bottom: 20px;
+}
+.todo-form {
+    margin-bottom: 20px;
+}
+.todo-box-area{
+    width: 50%;
+}
+.todo{
+    height: 30px;
+    background: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: .7em;
+}
+
+/***** BIO ******/
+
+#img_bio{
+    height: 200px;
+    margin: 0 0 40px 0;
+    background: url(imagenes/img_bio.png);
+}
+
+#txt_bio{
+    width: 600px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#txt_bio_santi{
+    
+    width: 600px;
+    padding: 20px 20px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid grey;
+}
+#tit_bio_santi{
+text-decoration: underline;
+}
+
+/****** TRABAJOS ******/
+
+#img_trabajos{
+    height: 200px;
+    margin-bottom: 50px;
+    background: url(imagenes/trabajos_img.png) no-repeat;
+}
+#trabajos_todo{
+    margin: 30px auto;
+}
+.d{
+    margin: 0;
+}
+#video_presenta{
+    margin: 50px 0;
+    text-align: center;
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(imagenes/iconos/play-icon.png);
+}
+#video_presenta video{
+    width: 60%;
+    height: 60%;
+    border-radius: 10%;  
+    transition: opacity .2s ease-in-out;
+}
+#video_presenta video:hover{
+    opacity: 0.5;
+}
+
+.img_disco{
+    height: 250px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+#img_d1{
+    background: url(imagenes/discos/lasplayas-pi.png);
+}
+#img_d2{
+    background: url(imagenes/discos/djanti-fdv.png);
+}
+#img_d3{
+    background: url(imagenes/discos/djanti-vm.png);
+}
+#img_d4{
+    background: url(imagenes/discos/lasplayas-dep.png);
+}
+#cont_discos {
+margin: 50px auto;
+display: grid;
+grid-template-columns: repeat(auto-fill, 250px);
+gap: 5%;
+justify-content: center;
+}
+
+.fab{
+    color: grey;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+.links_disco{
+    margin: 15px 0 10px;
+    text-align: center;
+}
+.link_d{
+    display: inline-block;
+    margin-right: 15px;
+}
+.link_d.spoti{
+    width: 30px;
+    height: 30px;
+    background-image: url(imagenes/iconos/spoti-logo.png);
+    background-size: cover;
+}
+.link_d.yt{
+    filter: grayscale(50);
+    width: 30px;
+    height: 30px;
+    background-image: url(imagenes/iconos/yt-logo.png);
+    background-size: cover;
+}
+.txt_disco{
+    text-align: center;
+    }   
+
+    
+
+/*estilo para tablets*/
+
+@media all and (min-width: 600px ) and (max-width: 1023px){
+
+
+     header, section, footer, main {
+         width: 580px;
+         margin-left: auto;
+         margin-right: auto;
+     }
+
+     h1{
+         font-size: 2em;
+         letter-spacing: 2px;
+     }
+     h2{
+         font-size: 1.5em;
+     }
+     h3{
+         font-size: 1em;
+     }
+     p{
+         font-size: 1em;
+     }
+
+     #estudio_logo {
+
+         margin: 0 0 0 20px;
+         padding-bottom: 0;
+     }
+     #estudio_logo a{
+         display: block;
+         height: 100px;
+         width: 160px;
+     }
+    
+     #lista_botonera{
+        padding: 0 1%;
+    }
+
+     
+     /* INDEX */
+    
+     #img_index {
+         background-size: cover;
+         background-position: center;
+         width: 580px;
+     }
+     .sep{
+         text-align: center;
+         margin-bottom: 40px;
+     }
+     
+     .textob{
+         line-height: 230px;
+     }
+
+     #txt_servicios{
+         width: 550px;
+     }
+
+     #logo_footer{
+         margin-top: 40px;
+         margin-left: 50px;
+     }
+     #info_contacto{
+        text-align: left;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+    #cont_redes{
+        margin-right: 30px;
+    }
+    #b{
+        column-gap: 70px;
+    }
+
+     /* CONTACTO */
+
+     #contacto_todo{
+        margin-top: 50px;
+    }
+
+     #contacto_form{
+         width: 250px;
+     }
+
+     #intro_form{
+         margin-bottom: 30px;
+         margin-right: 0;
+     }
+     
+     .form_box{
+         width: 250px;
+     }
+
+     #img_contacto{
+        width: 580px;
+     }
+     
+     /* BIO */
+     #img_bio{
+       background-position-y: top;
+     }
+
+     #txt_bio{
+        width: 500px;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    
+    #txt_bio_santi{
+        width: 480px;
+        padding: 20px;
+    }
+    #tit_bio_santi{
+        font-size: 1.2em;
+    }
+
+    /* TRABAJOS */
+
+     #trabajos_todo{
+         margin: 30px auto;
+     }
+
+     .d{
+         margin: 0 40px 50px 0;
+     }
+     .img_disco{
+        
+         height: 250px;
+         width: 250px;
+     }
+     #img_d1, #img_d2, #img_d3, #img_d4 {
+         background-size: 230px;
+     }
+    
+     .fab{
+         color: grey;
+         font-size: 30px;
+         box-sizing: border-box;
+     }
+     .links_disco{
+         margin-top: 10px;
+         text-align: center;
+     }
+     .link_d{
+         margin-right: 15px;
+     }
+     .txt_disco{
+         text-align: center;
+         }   
+} /* FIN TABLETS */
+
+
+/* ESTILO PARA CELULARES*/
+
+@media all and (max-width:599px){
+
+    header, section, footer, main {
+        width: 100%;
+    }
+
+    h1{
+
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    h2{
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+    h3{
+        font-size: 1em;
+    }
+    p{
+        font-size: 1em;
+    }
+
+    header {
+         height: auto;
+    }
+    #estudio_logo {
+        float: none;
+        margin: 0;
+    }
+    #estudio_logo a{
+        margin: 0 auto;
+    }
+
+    #botonera_menu {
+        height: auto;
+        margin-left: 0px;
+    }
+    #lista_botonera{
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    #lista_botonera li{
+        flex-basis: fill;
+        height: 50px;
+        border-top: 1.5px solid gray;
+    }
+    
+    #lista_botonera li a {
+        justify-content: center;
+        flex-basis: fill;
+        font-size: 1em;
+        height: 50px;
+
+    }
+    #img_index {
+        height: 500px;
+        width: 100%;
+        background-position: center;
+
+    }
+    #txt_presenta {
+        position: relative;
+        top: 430px;
+        margin: 0 auto;
+    }
+
+    .sep{
+        display: block;
+        margin-bottom: 40px;
+    }
+    .texto_separador{
+        font-size: 1.5em;
+        margin: 10px 10px;
+    }
+    
+    #txt_presenta_in{
+        margin-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .b{
+        display: block;
+        width: 250px;
+        height:250px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #b{
+        grid-template-columns: repeat(auto-fill, 250px);
+        height: auto;
+        margin: 0 auto;
+    }
+    .textob{
+        font-size: 1.3em;
+        margin: 0;
+        line-height: 300px;
+    }
+
+    #txt_servicios{
+        width: 90%;
+        margin: 50px auto 50px;
+    }
+
+    footer {
+        height: auto;
+    }
+    #cont_redes{
+        text-align: center;
+        float: none;
+        margin: 50px auto 50px;
+        padding-right: 15px;
+    }
+    #iconos_redes{
+       padding: 0;
+    }
+    
+    #contacto_todo{
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    #info_contacto{
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 0;
+        float: none;
+    }
+    #logo_footer{
+       margin: 40px auto;
+       float: none;
+       
+    }
+    #logo_footer img{
+        margin: 0 auto;
+       
+    }
+    #contacto_form{
+        float: none;
+        margin-left: 0;
+        width: 100%;
+    }
+    #contacto_form form{
+        text-align: center;
+        padding: 0 auto;
+    }
+    #intro_form{
+        margin: 40px auto 50px;
+        text-align: center;
+
+    }
+    .form_box{
+        margin: 20px auto;
+        width: 90%;
+    }
+    #img_contacto{
+        width: 100%;
+        height: 300px;
+        background-position: top;
+        float: none;
+    }
+    
+    #img_bio{
+        height: 300px;
+        background-position-x: center;
+        background-position-y: top;
+    }
+
+    #txt_bio{
+        width: 90%;
+    }
+    #txt_bio_santi{
+        width: 80%;
+    }
+
+    #img_trabajos{
+        background-position: -270px;
+        height: 200px;
+    }
+
+    #img_d1, #img_d2, #img_d3, #img_d4{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .d{
+        width: 250px;
+
+    }
+
+    .fab{
+        color: grey;
+        font-size: 30px;
+        box-sizing: border-box;
+    }
+    .links_disco{
+        margin-top: 10px;
+        padding-left: 20px;
+        text-align: center;
+    }
+    .link_d{
+        margin-right: 20px;
+    }
+    .txt_disco{
+        text-align: center;
+        }   
+}
