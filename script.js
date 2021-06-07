@@ -81,21 +81,21 @@ function enviarDatos(){
 }
 
 function videoControl(){
-    const video = $('#video_presenta video')
-
-    video.click(videoClick)
+    const video = document.querySelector('#video_presenta video');
+    console.log(video);
+    video.addEventListener('click', videoClick);
 }
 
 function videoClick (e){
-   const wrapper = $('#video_presenta')
+   const wrapper = document.getElementById('video_presenta');
    const video = e.target
 
    if(video.paused){
        video.play();
-       wrapper.css('backgroundImage', 'url(imagenes/iconos/pause-icon.png')
+       wrapper.style.backgroundImage = 'url(imagenes/iconos/pause-icon.png';
    }else{
        video.pause();
-       wrapper.css('backgroundImage', 'url(imagenes/iconos/play-icon.png')
+       wrapper.style.backgroundImage = 'url(imagenes/iconos/play-icon.png';
    }
 }
 
