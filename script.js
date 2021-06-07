@@ -9,14 +9,13 @@ var todoCount = 0;
 
 document.body.style.backgroundColor = colores[randIndex];
 
-if(htmlName == 'contacto.html')
+if(htmlName.includes('contacto')){
 $(document).ready(validacionForm);
-
-if(htmlName == 'trabajos.html')
-$(document).ready(videoControl)
-
-if(htmlName == 'contacto.html')
 $(document).ready(todoHandles)
+}
+
+if(htmlName.includes('trabajos'))
+$(document).ready(videoControl)
 
 function soundControl(){
     
