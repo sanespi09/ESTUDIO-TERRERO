@@ -17,6 +17,8 @@ $(document).ready(todoHandles)
 if(htmlName.includes('trabajos'))
 $(document).ready(videoControl)
 
+addHandlers();
+
 function soundControl(){
     
     if (sonidoOn){
@@ -165,4 +167,29 @@ function checkTodo (e) {
         todoText.css('textDecoration', 'line-through')
     else
         todoText.css('textDecoration', 'none')
+}
+
+function addHandlers (){
+    const navToggler = document.getElementById('nav_toggler_button');
+
+    navToggler.onclick = () => menuExpand();
+}
+
+function menuExpand (e){
+    console.log('click');
+    const navToggler = document.getElementById('nav_toggler_button');
+    const nav = document.getElementsByClassName('nav_menu')[0]; 
+
+    if(!nav.classList.contains('expand')){
+        navToggler.classList.add('up');
+        nav.classList.add('expand');
+    }else{
+        nav.onanimationend = () => nav.classList.remove('closing');
+        navToggler.onanimationend = () => navToggler.classList.remove('down');
+        nav.classList.remove('expand');
+        nav.classList.add('closing');
+        navToggler.classList.remove('up');
+        navToggler.classList.add('down');
+        
+    }
 }
